@@ -10,6 +10,7 @@ load("/data5/zhangq/ThrombusST/data/scRNA/301_RCC_Thrombus_FirstAnnotation.rda")
 setwd("/data5/zhangq/ThrombusST/data/scRNA/Tumor")
 D301obj <- subset(RCC_SCT, subset = bcluster %in% c("Epi", "T") & nFeature_RNA >= 500)
 
+
 listCountMtx <- list(); listNormCells <- list()
 for(samplei in unique(as.character(D301obj$PatientID)))
 {
@@ -29,3 +30,4 @@ for(samplei in unique(as.character(D301obj$PatientID)))
     save(copykat.test, file=paste0(samplei, "_Filter_copykat.rda"))
     print(samplei)
 }
+
